@@ -78,23 +78,14 @@ function App() {
   }
 
   const winnerSymbol = winnerSequence ? cells[winnerSequence[0]] : undefined;
-
-  const gameStatusMessage = () => {
-    if (winnerSequence) {
-      return <>Победитель: {renderSymbol(winnerSymbol)}</>
-    }
-    if (cells.every(el => el !== null)) {
-      return <>Победила дружба!</>
-    }
-
-    return <>Ход: {renderSymbol(currentStep)}</>
-  }
-
+  const isDraw = !winnerSequence && cells.filter(value => value).length === 9;
 
   return (
     <div className="game">
       <div className="game-info">
-        {gameStatusMessage()}
+        {/*{gameStatusMessage()}*/}
+        {isDraw ? "Ничья" : winnerSequence ? "Победил " : "Ход "}
+        {!isDraw && renderSymbol(winnerSymbol ?? currentStep)}
       </div>
       <div className="game-field">
         {
