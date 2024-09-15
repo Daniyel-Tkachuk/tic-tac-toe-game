@@ -83,7 +83,6 @@ function App() {
   return (
     <div className="game">
       <div className="game-info">
-        {/*{gameStatusMessage()}*/}
         {isDraw ? "Ничья" : winnerSequence ? "Победил " : "Ход "}
         {!isDraw && renderSymbol(winnerSymbol ?? currentStep)}
       </div>
