@@ -28,7 +28,7 @@ export const App = () => {
             />))
         }
       </div>
-      <button className="restart" onClick={restartGame}>сбросить</button>
+      <button className="restart" onClick={restartGame}>сброс</button>
     </div>
   );
 }
